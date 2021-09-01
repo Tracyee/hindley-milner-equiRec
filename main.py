@@ -1,7 +1,7 @@
 from __future__ import print_function
 
 from syntax import Identifier, LambdaAbs, Application, LetBinding
-from typing import TypeVariable, TypeOperator
+from typeDefn import TypeVariable, TypeOperator
 from exceptions import InferenceError, ParseError
 from inference import *
 from typingEnv import typingEnv
@@ -58,7 +58,6 @@ def main():
             LambdaAbs("f", Identifier("5")),
             Application(Identifier("g"), Identifier("g")),
         ),
-        # example that demonstrates generic and non-generic variables:
         # fn g => let f = fn x => g in pair (f 3, f true)
         LambdaAbs(
             "g",
@@ -105,6 +104,8 @@ def main():
             ),
             Application(Identifier("f"), Identifier("true")),
         ),
+        # nil: inl unit
+        Application(Identifier("inl"), Identifier("unit")),
     ]
 
     for expression in expressions:

@@ -1,5 +1,5 @@
 from syntax import Identifier, LambdaAbs, Application, LetBinding
-from typing import TypeVariable, TypeOperator
+from typeDefn import TypeVariable, TypeOperator
 from exceptions import InferenceError, ParseError
 
 
