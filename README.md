@@ -96,6 +96,8 @@ Other than that, union assumes to merge the node provided in the first argument 
 
 
 ## Demo:
+
+The following are examples of the successfully type inference and some internal failures (due to the nature of Hindley-Milner type system).
 ```
 (let factorial = (fix (fn self => (fn n => (((cond (zero n)) 1) ((times n) (self (pred n))))))) in (factorial 5)) :  int
 (let f = (fn x => x) in ((pair (f 4)) (f true))) :  (int * bool)
