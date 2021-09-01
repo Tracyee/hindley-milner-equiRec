@@ -94,6 +94,19 @@ Specifically, we have two cases where the direction is enforced.
 
 Other than that, union assumes to merge the node provided in the first argument to the node provided in the second argument.
 
+
+## Demo:
+```
+(let factorial = (fix (fn self => (fn n => (((cond (zero n)) 1) ((times n) (self (pred n))))))) in (factorial 5)) :  int
+(let f = (fn x => x) in ((pair (f 4)) (f true))) :  (int * bool)
+(let g = (fn f => 5) in (g g)) :  int
+(fn g => (let f = (fn x => g) in ((pair (f 3)) (f true)))) :  (j -> (j * j))
+(fn f => (fn g => (fn arg => (g (f arg))))) :  ((n -> o) -> ((o -> p) -> (n -> p)))
+(fn x => ((pair (x 3)) (x true))) :  Type mismatch: bool != int
+((pair (f 4)) (f true)) :  Undefined symbol f
+(inl unit) :  (unit + u)
+```
+
 ## Acknowledgement
 
 This project is based on the [Python code by Robert Smallshire](https://github.com/rob-smallshire/hindley-milner-python), the [C++ code by Jared Hoberock](https://github.com/jaredhoberock/hindley_milner), and [the paper "Basic Polymorphic Typechecking" by Cardelli](http://lucacardelli.name/Papers/BasicTypechecking.pdf).
