@@ -93,3 +93,7 @@ Specifically, we have two cases where the direction is enforced.
 2. In unifying a [non-generic variable](https://en.wikipedia.org/wiki/Parametric_polymorphism) to a term, all the variables contained in that term should become non-generic.
 
 Other than that, union assumes to merge the node provided in the first argument to the node provided in the second argument.
+
+## Acknowledgement
+
+This project is based on the [Python code by Robert Smallshire](https://github.com/rob-smallshire/hindley-milner-python), the [C++ code by Jared Hoberock](https://github.com/jaredhoberock/hindley_milner), and [the paper "Basic Polymorphic Typechecking" by Cardelli](http://lucacardelli.name/Papers/BasicTypechecking.pdf).
